@@ -116,7 +116,7 @@
           <div v-for="item in arr" :key="item.id" class="book-item-wrap">
             <div class="book-item">
               <router-link :to="{ path: 'book', query: {id: item.book_id} }" target="_blank" class="clearfix">
-                <img v-lazy="item.cover" :title="item.name">
+                <img :src="item.cover" :title="item.name">
                 <div class="book-info">
                   <h3>{{ item.name }}</h3>
                   <h4>
@@ -379,7 +379,30 @@ export default {
   mounted () {
     this.setParams()
     this.setTitle()
-    this.getNovelList()
+    // this.getNovelList()
+  },
+  async asyncData (context) {
+    const ip = await app.$axios.$get('http://icanhazip.com')
+    return { ip }
+    /*const res = await ApiNovelList({
+      channel: '0',
+      words_total: '0',
+      status: '0',
+      date: '0',
+      category: '0',
+      page: 1,
+      sortType: '0'
+    })
+
+    if (res.code === 200) {
+      return {
+        listData: res.data.list || [],
+        totalPage: res.data.totalPage
+      }
+    } else {
+      return {}
+    }*/
+    return {}
   },
   methods: {
     setParams () {
