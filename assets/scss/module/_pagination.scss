@@ -1,0 +1,80 @@
+.pager-wrapper {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.pager-pages {
+    display: inline-block;
+    height: 32px;
+    font-size: 0;
+}
+.pager-pages a:not(.active),
+.pager-jump a {
+    cursor: pointer;
+}
+.pager-wrapper a {
+    display: inline-block;
+    $h: 30px;
+    height: $h;
+    line-height: $h;
+    padding: 0 10px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    margin: 0 5px;
+    color: #666;
+    font-size: 14px;
+}
+.pager-wrapper strong {
+    display: inline-block;
+    $h: 30px;
+    height: $h;
+    line-height: $h;
+    padding: 0 10px;
+    margin: 0 5px;
+    color: #666;
+    font-size: 14px;
+}
+.pager-wrapper a {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    background-color: #fff;
+    transition: all 0.2s;
+}
+.pager-wrapper a:hover {
+    color: rgb(33, 150, 243);
+    border-color: rgb(33, 150, 243);
+}
+.pager-wrapper .active {
+    background: #3097fd;
+    border-color: #3097fd;
+    color: #fff;
+}
+.pager-wrapper .active:hover {
+    background: #fafafa;
+    color: #666;
+}
+.pager-jump {
+    display: inline-block;
+    height: 32px;
+    margin-left: 20px;
+}
+.pager-jump span {
+    line-height: 32px;
+}
+.pager-jump em {
+    margin: 0 5px;
+    font-style: normal;
+}
+.pager-jump .jump-input {
+    width: 60px;
+    height: 32px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    vertical-align: top;
+}
+.pager-jump .jump-input:focus {
+    border-color: rgb(33, 150, 243);
+}

@@ -1,0 +1,242 @@
+.el-tooltip__popper.ui-player-tooltip-style {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 6px;
+    background: rgba(0,0,0,.7)!important;
+    .popper__arrow {
+        border-top-color: rgba(0,0,0,.35)!important;
+        &:after {
+            border-top-color: rgba(0,0,0,.35)!important;
+        }
+    }
+}
+.ui-player{
+    $h: 50px;
+    height: $h;
+    background-color: rgba(#161616, .8);
+    @include gradient(rgba(#161616, .8), rgba(#232323, .8));
+    color: #fff;
+    font-size: 12px;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    width: 100%;
+    .content-inner{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 6px;
+        width: 880px;
+    }
+    .thumb{
+        width: 36px;
+        height: 36px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px 3px rgba(#000, .5);
+        img{
+            width: 100%;
+        }
+    }
+    .icon-font{
+        font-size: 18px;
+        &.icon-play{
+            font-size: 30px;
+        }
+        &:hover{
+            color: #3097fd;
+        }
+    }
+    .player-btns{
+        cursor: pointer;
+        height: 100%;
+        @include center();
+        >div{
+            margin: 0 8px;
+        }
+    }
+    .player-content{
+        // width: 660px;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        justify-items: center;
+        flex-direction: column;
+        .title{
+            height: 20px;
+            line-height: 20px;
+            transform: translateY(6px);
+        }
+    }
+    .controls{
+        height: 100%;
+        width: 80px;
+        @include center();
+        .icon{
+            display: inline-block;
+            $size: 30px;
+            width: $size;
+            height: $size;
+            @include center();
+            margin: 0 5px;
+            cursor: pointer;
+            position: relative;
+        }
+    }
+
+}
+
+.progress{
+    box-sizing: border-box;
+    @include center();
+    padding-bottom: 10px;
+    &-bar{
+        $h: 2px;
+        height: $h;
+        width: 520px;
+        background: #1b1b1b;
+        position: relative;
+        &-load{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: $h;
+            background: #646464;
+        }
+        &-cur{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: $h;
+            background: #3097fd;
+        }
+        &::after{
+            display: block;
+            content: '';
+            width: 100%;
+            height: 6px;
+            position: absolute;
+            left: 0;
+            top: -3px;
+            cursor: pointer;
+        }
+    }
+    .btn-seek{
+        display: inline-block;
+        $size: 10px;
+        width: $size;
+        height: $size;
+        overflow: hidden;
+        background: #fff;
+        border-radius: $size/2;
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-top: ($size - 2px) * (-0.5);
+        cursor: pointer;
+    }
+    .play-time{
+        margin-left: 12px;
+        width: 120px;
+    }
+    .total-titme{
+        color: #ccc;
+    }
+}
+
+
+.player-layer{
+    width: 600px;
+    height: 280px;
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    right: 100px;
+    bottom: 50px;
+    background: rgba(#1d1d1d, .8);
+    .item{
+        $h: 36px;
+        height: $h;
+        line-height: $h;
+        padding: 0 20px;
+        &:hover{
+            background: rgba(#f9f9f9, .1);
+            $color: #3097fd;
+            color: $color;
+        }
+        .title{
+            margin-left: 20px;
+        }
+    }
+    .p-hd{
+        $h: 36px;
+        height: $h;
+        line-height: $h;
+        margin-top: 10px;
+        padding-left: 20px;
+        font-size: 16px;
+        border-bottom: 1px solid #6b6b6b;
+        span{
+            color: #999;
+            font-size: 14px;
+        }
+    }
+    .p-bd{
+        padding: 10px 0;
+    }
+}
+.layer-list{
+    &-view{
+        max-height: 230px;
+        overflow-y: auto;
+    }
+    >.item{
+        $h: 36px;
+        height: $h;
+        line-height: $h;
+        font-size: 12px;
+    }
+}
+
+.player-voice{
+    background: rgba(#000, .8);
+    width: 30px;
+    height: 98px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+    border-radius: 5px 5px 0 0;
+    // &::before{
+    //     display: block;
+    //     content: '';
+    //     width: 2px;
+    //     height: 90px;
+    //     background: #000;
+    //     overflow: hidden;
+    //     position: absolute;
+    //     left: 50%;
+    //     bottom: 0;
+    //     margin-left: -1px;
+    // }
+    // .value{
+    //     width: 2px;
+    //     height: 50px;
+    //     position: absolute;
+    //     left: 50%;
+    //     bottom: 0;
+    //     margin-left: -1px;
+    //     background: #3097fd;
+    // }
+    // .volume-btn{
+    //     display: block;
+    //     width: 10px;
+    //     height: 10px;
+    //     background: #fff;
+    //     border-radius: 5px;
+    //     overflow: hidden;
+    //     position: absolute;
+    //     left: 50%;
+    //     margin-left: -5px;
+    //     top: 0;
+    // }
+}

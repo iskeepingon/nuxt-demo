@@ -1,0 +1,52 @@
+.hot-novel{
+    margin-right: -50px;
+    @extend %clearfix;
+    &-list{
+        >.item{
+            width: 220px;
+            margin-right: 41px;
+            float: left;
+            border-bottom: 1px solid $lineColr;
+            $h: 40px;
+            height: $h;
+            line-height: $h;
+            padding: 0 8px 0 6px;
+            box-sizing: border-box;
+            @include ellipsis(1);
+            &:hover{
+                background: #f9f9f9;
+                .hot-icon-book{
+                    color: $hoverColor;
+                }
+            }
+            a{
+                display: flex;
+                justify-content: space-between;
+            }
+            .hot-name{
+                width: 94px;
+                @include ellipsis(1);
+            }
+            .hot-icon-book{
+                font-size: 20px;
+                color: #ccc;
+            }
+
+        }
+    }
+}
+
+.mz-novel{
+    background: #f9f9f9;
+    padding: 11px 20px;
+    &-list{
+        @extend %clearfix;
+        >li{
+            height: 43px;
+            line-height: 43px;
+            float: left;
+            width: 50%;
+            @include ellipsis(1);
+        }
+    }
+}

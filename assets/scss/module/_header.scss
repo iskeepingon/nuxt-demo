@@ -1,0 +1,209 @@
+.header {
+    height: 80px;
+    position: relative;
+    z-index: 100;
+    .header-content-inner {
+        position: relative;
+    }
+}
+
+.header .logo {
+    float: left;
+    padding: 8px 0;
+    .index_logo {
+        float: left;
+        margin-top: 16px;
+    }
+    .cur_Text {
+        margin-top: 14px;
+        float: left;
+        width: 68px;
+        color: #3097fd;
+        font-family: MicrosoftYaHei;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: right;
+        margin-left: 16px;
+        position: relative;
+        .dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50% 50%;
+            background: #3097fd;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -2px;
+        }
+    }
+}
+
+.header .index_logo img {
+    vertical-align: top;
+}
+
+
+
+.header .search {
+    $color: #3388ff;
+    width: 400px;
+    z-index: 29;
+    float: left;
+    margin-top: 20px;
+    margin-left: 178px;
+    $h-input: 36px;
+    height: $h-input;
+    .input_box {
+        width: 306px;
+        float: left;
+        margin-left: 0;
+        height: $h-input;
+        background: #ffffff;
+        border: 1px solid $color;
+        box-sizing: border-box;
+    }
+    .headsearchform {
+        float: none;
+        width: 366px;
+    }
+    .input_box input {
+        width: 240px;
+        height: 28px;
+        line-height: 28px;
+        padding-left: 8px;
+        border: 0 none;
+        background: none;
+        color: #333;
+        font-size: 14px;
+        margin-top: 4px;
+        -webkit-box-shadow: 0 0 22px 22px rgba(255, 255, 255, 1) inset;
+    }
+    .butn_ss_sch {
+        float: left;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        border: 0 none;
+        width: 92px;
+        height: 36px;
+        padding-bottom: 3px;
+        font-size: 14px;
+        color: #ffffff;
+        line-height: 36px;
+        /* background: url(../../image/common/common_butn_ss_sch.png); */
+        background: #3388ff;
+        cursor: pointer;
+    }
+}
+.input_box_img,.header .search1 .input_box input {
+    float: left;
+}
+
+.input_box_img {
+    width: 18px;
+    height: 25px;
+    line-height: 16px;
+    margin-top: 8px;
+    margin-left: 7px;
+}
+
+.input_box_img a {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    padding: 1px 25px 1px 0;
+    border-right: 1px solid #DADADA;
+    background-position: -168px -296px;
+    display: block;
+    overflow: hidden
+}
+
+.input_box_img a img {
+    float: left
+}
+
+.header .search1 .input_box a.current {
+    // background: url(../../images/common/arrowup.png) no-repeat 25px 8px;
+}
+
+.input_box_img .s_style {
+    position: absolute;
+    left: 0;
+    top: 29px;
+    width: 74px;
+    height: 96px;
+    border: 1px solid #CFCFCF;
+    background: #fff;
+    z-index: 30;
+}
+
+.input_box_img .s_style ul {
+    background: #fff;
+}
+
+.input_box_img .s_style li {
+    padding: 1px 0;
+}
+
+.input_box_img .s_style li a {
+    display: block;
+    width: auto;
+    height: 16px;
+    line-height: 16px;
+    padding: 7px 0 7px 10px;
+    overflow: hidden;
+    zoom: 1;
+    background: none;
+    border-right: 0 none;
+}
+
+.input_box_img .s_style li a:hover {
+    background: #dcecf7;
+    text-decoration: none;
+    color: #333
+}
+
+.input_box_img .s_style li a img {
+    float: left;
+    margin-right: 10px;
+}
+
+.hot-news{
+    //width: 180px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: 12px;
+    &-list{
+        $h: 18px;
+        height: $h;
+        line-height: $h;
+        .item{
+            //@include ellipsis(1);
+            padding-left: 10px;
+            position: relative;
+            &::before{
+                display: block;
+                content: '';
+                $size: 4px;
+                width: $size;
+                height: $size;
+                overflow: hidden;
+                background: #3097fd;
+                border-radius: 2px;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                margin-top: -2px;
+            }
+        }
+        a{
+            color: #666;
+            &:hover{
+                color: $hoverColor;
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+@font-face {
+  font-family: 'font-novel';  /* project id 1958851 */
+  src: url('//at.alicdn.com/t/font_1958851_nt9xznb4nm.eot');
+  src: url('//at.alicdn.com/t/font_1958851_nt9xznb4nm.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1958851_nt9xznb4nm.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1958851_nt9xznb4nm.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1958851_nt9xznb4nm.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1958851_nt9xznb4nm.svg#iconfont') format('svg');
+}
+
+.icon-font{
+	font-family: 'font-novel';
+}
+
+.w1200 {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+%clearfix{
+  *zoom: 1;
+  &:after {
+      content: "";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      height: 0;
+      font-size: 0;
+      line-height: 0;
+      overflow: hidden;
+  }
+}
+
+.clearfix{
+  @extend %clearfix;
+}
+
+.ellipsis{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+img[lazy=loading] {
+
+}
+img[lazy=error] {
+
+}
+img[lazy=loaded] {
+
+}

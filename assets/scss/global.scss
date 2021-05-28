@@ -1,0 +1,78 @@
+@import "lib/mixin.scss";
+@import "lib/reset.scss";
+@import "lib/common.scss";
+
+@import "module/ui-player";
+@import "module/header";
+@import "module/menu";
+@import "module/footer";
+
+
+body{
+    min-width: $contentWith;
+    font-size: 14px;
+}
+a{
+    &:hover{
+        color: $hoverColor;
+    }
+}
+.content-inner{
+    width: $contentWith;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.layout-floor{
+    @extend %clearfix;
+    .layout-main{
+        width: 740px;
+        float: left;
+    }
+    .layout-side{
+        width: 230px;
+        float: right;
+    }
+}
+
+
+.box-head{
+    padding-top: 30px;
+    padding-bottom: 14px;
+    height: 24px;
+    box-sizing: content-box;
+    overflow: hidden;
+    .title{
+        font-size: 18px;
+        font-weight: bold;
+        display: inline-block;
+        &::before{
+            display: inline-block;
+            content: '';
+            width: 5px;
+            height: 15px;
+            overflow: hidden;
+            background: #0784ff;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+    }
+    .desc{
+        color: #999;
+        font-size: 12px;
+        margin-left: 4px;
+    }
+    &-more{
+        float: right;
+        a{
+            line-height: 28px;
+            display: inline-block;
+            font-size: 14px;
+            color: #72727b;
+            margin-right: 8px;
+            &:hover{
+                color: $hoverColor;
+            }
+        }
+    }
+}

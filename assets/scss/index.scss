@@ -1,0 +1,17 @@
+@import "./lib/mixin.scss";
+@import "./lib/reset.scss";
+@import "./lib/common.scss";
+@import "module/album";
+@import "module/mz";
+
+body{
+    background: #fff;
+}
+.item-gg{
+    padding-top: 30px;
+    >iframe{
+        width: 100%;
+        height: 120px;
+        overflow: hidden;
+    }
+}

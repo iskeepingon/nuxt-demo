@@ -1,0 +1,26 @@
+.menu{
+    $bg: #3097fd;
+    $curColor: #0784ff;
+    $h: 40px;
+    background: $bg;
+    height: $h;
+    line-height: $h;
+    color: #fff;
+    font-size: 16px;
+    .item{
+        display: inline-block;
+        margin-right: 5px;
+        height: $h;
+        padding: 0 15px;
+        &:hover{
+            background: $curColor;
+            color: #fff;
+            cursor: pointer;
+        }
+        &.cur{
+            background: $curColor;
+        }
+    }
+
+
+}

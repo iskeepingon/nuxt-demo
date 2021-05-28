@@ -1,0 +1,38 @@
+@import "lib/mixin.scss";
+@import "lib/reset.scss";
+@import "lib/common.scss";
+
+.page-tip{
+    padding-bottom: 200px;
+    .content{
+        padding-left: 470px;
+        text-align: left;
+        position: relative;
+        background: url('../images/tip.png') 270px 200px no-repeat;
+    }
+    h2{
+        color: #1e78cc;
+        font-size: 24px;
+        padding-top: 200px;
+        padding-bottom: 10px;
+    }
+    p{
+        line-height: 20px;
+        color: #666;
+        font-size: 12px;
+        text-align: left;
+        line-height: 26px;
+    }
+    .btn-download{
+        display: inline-block;
+        background: #33aaff;
+        color: #fff;
+        text-align: center;
+        width: 160px;
+        height: 26px;
+        line-height: 26px;
+        border-radius: 3px;
+        margin-top: 14px;
+    }
+}
+

@@ -1,0 +1,29 @@
+@import "lib/mixin.scss";
+@import "lib/reset.scss";
+@import "lib/common.scss";
+@import "module/pagination";
+
+body{
+    // background: pink;
+}
+
+.list-tab-sort{
+    $h: 26px;
+    height: $h;
+    line-height: $h;
+    >li{
+        display: inline-block;
+        color: #333;
+        padding: 0 3px;
+        margin: 0 7px;
+        $color: #3097fd;
+        cursor: pointer;
+        &.current{
+            color: $color;
+            background: url('../images/tab-cur.png') center bottom no-repeat;
+        }
+        &:hover{
+            color: $color;
+        }
+    }
+}
