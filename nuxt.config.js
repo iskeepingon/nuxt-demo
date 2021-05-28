@@ -44,7 +44,7 @@ export default {
     // 项目里要用的 CSS 文件
     // '@/assets/css/main.css',
     // // 项目里要使用的 SCSS 文件
-    // '@/assets/css/main.scss',
+    '@/assets/scss/global.scss'
     // 'element-ui/lib/theme-chalk/index.css',
     // 'reset.css',
     // '@/static/css/reset.css',
@@ -100,10 +100,11 @@ export default {
   },
   proxy: {
     '/api': {
-      target: 'http://novel.contentchina.com',
+      target: 'https://novel.contentchina.com',
       pathRewrite: {
         changeOrigin: true
       }
     }
-  }
+  },
+  ssr: true
 }

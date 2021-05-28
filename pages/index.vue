@@ -158,12 +158,12 @@
 <script>
 
 import { ApiNovelList } from '@/api/index/index.js'
-// import Pager from '@/components/Page.vue'
+import Pager from '@/components/Page.vue'
 
 export default {
   name: 'Index',
   components: {
-    // Pager,
+    Pager
   },
   filters: {
     fontNumFormate (value) {
