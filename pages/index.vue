@@ -90,7 +90,8 @@
             width="210"
             height="210"
             frameborder="0"
-            scrolling="no"/>
+            scrolling="no"
+          />
         </div>
       </div>
     </div>
@@ -120,9 +121,9 @@
                 <div class="book-info">
                   <h3>{{ item.name }}</h3>
                   <h4>
-                    <span>{{ item.category }}·{{ item.tags }}</span><b/><span>{{
+                    <span>{{ item.category }}·{{ item.tags }}</span><b /><span>{{
                       item.full_flag == 1 ? '连载中' : '完结'
-                    }}</span><b/><span>{{ item.words_total | fontNumFormate }}万字</span>
+                    }}</span><b /><span>{{ item.words_total | fontNumFormate }}万字</span>
                   </h4>
                   <p>{{ item.brief }}</p>
                   <div class="time">
@@ -137,7 +138,7 @@
     </template>
     <div v-if="listDataForView.length==0&&isLoaded" class="book-list-no-data w1200">
       <div class="book-list-no-data-info">
-        <i/><span>没有找到符合条件的书<br>请重新筛选试试哦</span>
+        <i /><span>没有找到符合条件的书<br>请重新筛选试试哦</span>
       </div>
     </div>
     <div v-if="totalPage" class="page-wrap w1200">
@@ -184,6 +185,41 @@ export default {
       }
       return valueTime.getFullYear() + '年' + (valueTime.getMonth() + 1) + '月' + valueTime.getDate() + '日'
     }
+  },
+  async asyncData ({ app }) {
+    const res = await app.$axios.$post('https://novel.contentchina.com/api/novel/index', {
+      channel: '0',
+      words_total: '0',
+      status: '0',
+      date: '0',
+      category: '0',
+      page: 1,
+      sortType: '0'
+    })
+    return {
+      listData: res.data.list || [],
+      totalPage: res.data.totalPage
+    }
+
+    /* const res = await ApiNovelList({
+      channel: '0',
+      words_total: '0',
+      status: '0',
+      date: '0',
+      category: '0',
+      page: 1,
+      sortType: '0'
+    })
+
+    if (res.code === 200) {
+      return {
+        listData: res.data.list || [],
+        totalPage: res.data.totalPage
+      }
+    } else {
+      return {}
+    } */
+    return {}
   },
   data () {
     return {
@@ -380,29 +416,6 @@ export default {
     this.setParams()
     this.setTitle()
     // this.getNovelList()
-  },
-  async asyncData (context) {
-    const ip = await app.$axios.$get('http://icanhazip.com')
-    return { ip }
-    /*const res = await ApiNovelList({
-      channel: '0',
-      words_total: '0',
-      status: '0',
-      date: '0',
-      category: '0',
-      page: 1,
-      sortType: '0'
-    })
-
-    if (res.code === 200) {
-      return {
-        listData: res.data.list || [],
-        totalPage: res.data.totalPage
-      }
-    } else {
-      return {}
-    }*/
-    return {}
   },
   methods: {
     setParams () {
