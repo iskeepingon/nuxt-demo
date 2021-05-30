@@ -186,40 +186,15 @@ export default {
       return valueTime.getFullYear() + '年' + (valueTime.getMonth() + 1) + '月' + valueTime.getDate() + '日'
     }
   },
-  async asyncData ({ app }) {
-    const res = await app.$axios.$post('https://novel.contentchina.com/api/novel/index', {
-      channel: '0',
-      words_total: '0',
-      status: '0',
-      date: '0',
-      category: '0',
-      page: 1,
-      sortType: '0'
-    })
+  async asyncData (ctx) {
+    const {channel='0', words_total='0', status='0', date='0', category='0', page=1, sortType='0'} = ctx.query
+    const params = {channel, words_total, status, date, category, page, sortType}
+    const res = await ctx.app.$axios.$post('https://novel.contentchina.com/api/novel/index', params)
     return {
       listData: res.data.list || [],
-      totalPage: res.data.totalPage
+      totalPage: res.data.totalPage,
+      conditionParams: params
     }
-
-    /* const res = await ApiNovelList({
-      channel: '0',
-      words_total: '0',
-      status: '0',
-      date: '0',
-      category: '0',
-      page: 1,
-      sortType: '0'
-    })
-
-    if (res.code === 200) {
-      return {
-        listData: res.data.list || [],
-        totalPage: res.data.totalPage
-      }
-    } else {
-      return {}
-    } */
-    return {}
   },
   data () {
     return {
